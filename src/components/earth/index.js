@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoader } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
 import { TextureLoader } from 'three';
 
 import EarthDayMap from '../../assets/textures/8k_earth_daymap.jpg';
@@ -18,6 +19,13 @@ export function Earth(props) {
         <sphereGeometry args={[1, 32, 32]} />
         <meshPhongMaterial specularMap={specularMap} />
         <meshStandardMaterial map={colorMap} normalMap={normalMap} />
+        <OrbitControls 
+          enableZoom={true} 
+          enalbePan={true} 
+          enableRatate={true}
+          zoomSpeed={0.6}
+          panSpeed={0.5}
+          rotateSpeed={0.4} />
       </mesh>
     </>
   )
