@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoader } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
+import { OrbitControls, Stars } from '@react-three/drei';
 import { TextureLoader } from 'three';
 import * as THREE from 'three';
 
@@ -16,6 +16,7 @@ export function Earth(props) {
   return (
     <>
       <ambientLight intensity={1} />
+      <Stars radius={300} depth={200} count={2000} factor={7} saturation={0} fade={true} />
       <mesh>
         <sphereGeometry args={[1.01, 32, 32]} />
         <meshPhongMaterial map={cloudsMap} opacity={0.4} depthWrite={false} transparent={true} side={THREE.DoubleSide} />
