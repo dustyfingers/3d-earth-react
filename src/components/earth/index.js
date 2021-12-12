@@ -15,7 +15,7 @@ export function Earth(props) {
 
   return (
     <>
-      <ambientLight intensity={1} />
+      <pointLight color="#f6f3ea" position={[2, 0, 2]} intensity={1.1} />
       <Stars radius={300} depth={200} count={2000} factor={7} saturation={0} fade={true} />
       <mesh>
         <sphereGeometry args={[1.01, 32, 32]} />
@@ -24,7 +24,7 @@ export function Earth(props) {
       <mesh>
         <sphereGeometry args={[1, 32, 32]} />
         <meshPhongMaterial specularMap={specularMap} />
-        <meshStandardMaterial map={colorMap} normalMap={normalMap} />
+        <meshStandardMaterial map={colorMap} normalMap={normalMap} metalness={0.2} roughness={0.9} />
         <OrbitControls 
           enableZoom={true} 
           enalbePan={true} 
