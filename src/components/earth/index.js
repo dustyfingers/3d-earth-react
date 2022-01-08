@@ -30,20 +30,20 @@ export function Earth(props) {
       <pointLight color="#f6f3ea" position={[2, 0, 2]} intensity={1.1} />
       <Stars radius={300} depth={200} count={2000} factor={7} saturation={0} fade={true} />
       <mesh ref={cloudsMeshRef}>
-        <sphereGeometry args={[1.01, 32, 32]} />
+        <sphereGeometry args={[1.01, 32, 32]} position={[0,0,5]} />
         <meshPhongMaterial map={cloudsMap} opacity={0.4} depthWrite={false} transparent={true} side={THREE.DoubleSide} />
       </mesh>
       <mesh ref={earthMeshRef}>
-        <sphereGeometry args={[1, 32, 32]} />
+        <sphereGeometry args={[1, 32, 32]} position={[0,0,5]} />
         <meshPhongMaterial specularMap={specularMap} />
         <meshStandardMaterial map={colorMap} normalMap={normalMap} metalness={0.4} roughness={0.7} />
-        <OrbitControls 
+        {/* <OrbitControls 
           enableZoom={true} 
           enalbePan={true} 
           enableRatate={true}
           zoomSpeed={0.6}
           panSpeed={0.5}
-          rotateSpeed={0.4} />
+          rotateSpeed={0.4} /> */}
       </mesh>
     </>
   )
